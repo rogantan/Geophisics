@@ -35,5 +35,15 @@ namespace Geophisics
             mainWindow.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AdminAddProjectWindow adminAddProjectWindow = new AdminAddProjectWindow();
+            if (adminAddProjectWindow.ShowDialog() != true) return;
+            db.Проектыs.Add(adminAddProjectWindow.Project);
+            db.SaveChanges();
+            PROJECTS.Items.Refresh();
+            MessageBox.Show("Проект добавлен!");
+        }
     }
 }

@@ -1,0 +1,26 @@
+﻿<Window x:Class="Geophisics.AdminAddProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geophisics"
+        mc:Ignorable="d"
+        Title="Добавить проект" Height="300" Width="300">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Введите название" />
+            <TextBox x:Name="name" Text="{Binding Project.Название}"/>
+            <TextBlock Text="Введите описание"/>
+            <TextBox x:Name="desc" Text="{Binding Project.Описание}"/>
+            <TextBlock Text="Выберите дату начала проекта"/>
+            <DatePicker x:Name="begin_date" SelectedDate="{Binding Project.ДатаНачала}"/>
+            <TextBlock Text="Выберите дату окончания проекта"/>
+            <DatePicker x:Name="end_date" SelectedDate="{Binding Project.ДатаОкончания}"/>
+            <TextBlock Text="Выберите админа"/>
+            <ComboBox x:Name="ad_combo" SelectedItem="{Binding Project.IdАдминистратораNavigation}" DisplayMemberPath="Логин"></ComboBox>
+            <TextBlock Text="Выберите заказчика"/>
+            <ComboBox x:Name="cus_combo" SelectedItem="{Binding Project.IdЗаказчикаNavigation}" DisplayMemberPath="Логин"></ComboBox>
+            <Button Click="Button_Click" Margin="0, 10">Сохранить</Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -35,5 +35,15 @@ namespace Geophisics
             mainWindow.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AdminAddSearcherWindow searcher = new AdminAddSearcherWindow();
+            if (searcher.ShowDialog() != true) return;
+            db.Исследователиs.Add(searcher.Sear);
+            db.SaveChanges();
+            SEARCHERS.Items.Refresh();
+            MessageBox.Show("Исследователь добавлен!");
+        }
     }
 }

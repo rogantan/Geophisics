@@ -35,5 +35,15 @@ namespace Geophisics
             mainWindow.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AdminAddGeoWindow adminAddGeoWindow = new AdminAddGeoWindow();
+            if (adminAddGeoWindow.ShowDialog() != true) return;
+            db.Геофизикиs.Add(adminAddGeoWindow.Geo);
+            db.SaveChanges();
+            GEOS.Items.Refresh();
+            MessageBox.Show("Геофизик добавлен!");
+        }
     }
 }

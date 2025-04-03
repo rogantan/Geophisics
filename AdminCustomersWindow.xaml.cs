@@ -35,5 +35,15 @@ namespace Geophisics
             mainWindow.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AdminAddCustomerWindow adminAddCustomerWindow = new AdminAddCustomerWindow();
+            if (adminAddCustomerWindow.ShowDialog() != true) return;
+            db.Заказчикиs.Add(adminAddCustomerWindow.Customer);
+            db.SaveChanges();
+            CUSTOMERS.Items.Refresh();
+            MessageBox.Show("Заказчик добавлен!");
+        }
     }
 }

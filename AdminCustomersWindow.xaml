@@ -13,12 +13,12 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="Заказчики" Grid.Row="0" FontSize="30"/>
-        <Button Content="Добавить заказчика" Grid.Row="1" Margin="550,0,45,0" />
+        <Button Content="Добавить заказчика" Grid.Row="1" Margin="550,0,45,0" Click="Button_Click_1"/>
         <Button Content="Назад" Grid.Row="1" Margin="10,0,675,0" Click="Button_Click"/>
         <DataGrid Grid.Row="2" AutoGenerateColumns="False" x:Name="CUSTOMERS">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="ФИО" Binding="{Binding ФИО}"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding Фио}"/>
                 <DataGridTextColumn Header="Почта" Binding="{Binding Почта}"/>
                 <DataGridTextColumn Header="Дата начала" Binding="{Binding Логин}"/>
                 <DataGridTextColumn Header="Пароль" Binding="{Binding Пароль}" />

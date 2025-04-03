@@ -13,7 +13,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="Проекты" Grid.Row="0" FontSize="30"/>
-        <Button Content="Добавить проект" Grid.Row="1" Margin="535,0,65,0"/>
+        <Button Content="Добавить проект" Grid.Row="1" Margin="535,0,65,0" Click="Button_Click_1"/>
         <Button Content="Назад" Grid.Row="1" Margin="10,0,675,0" Click="Button_Click"/>
         <DataGrid Grid.Row="2" x:Name="PROJECTS" AutoGenerateColumns="False">
             <DataGrid.Columns>
