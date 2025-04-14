@@ -43,5 +43,12 @@ namespace Geophisics
                 win.ShowDialog();
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ResearchMainWindow researchMainWindow = new ResearchMainWindow();
+            researchMainWindow.Show();
+            this.Close();
+        }
     }
 }

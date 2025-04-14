@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Geophisics
 {
     /// <summary>
-    /// Interaction logic for ResearchAddPlozhWindow.xaml
+    /// Interaction logic for ResearchPiketsWindow.xaml
     /// </summary>
-    public partial class ResearchAddPlozhWindow : Window
+    public partial class ResearchPiketsWindow : Window
     {
-        public ResearchAddPlozhWindow()
+        public ResearchPiketsWindow()
         {
             InitializeComponent();
         }

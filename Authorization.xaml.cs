@@ -48,7 +48,7 @@ namespace Geophisics
             }
             else if (issledovs)
             {
-                ResearchProjectsWindow mainWindow = new ResearchProjectsWindow();
+                ResearchMainWindow mainWindow = new ResearchMainWindow();
                 this.Close(); 
                 mainWindow.Show();
             }

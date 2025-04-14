@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Проекты" Grid.Row="0" FontSize="30"/>
         <Button Content="Площади" Grid.Row="1" Margin="535,0,65,0" Click="Button_Click"/>
+        <Button Content="Назад" Grid.Row="1" Margin="10,0,675,0" Click="Button_Click_1"/>
         <ListView Grid.Row="2" x:Name="PROJECTS" MouseDoubleClick="PROJECTS_MouseDoubleClick">
             <ListView.View>
                 <GridView>
