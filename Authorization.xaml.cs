@@ -42,11 +42,15 @@ namespace Geophisics
             }
             else if (customers)
             {
-
+                CustomerProjectsWindow mainWindow = new CustomerProjectsWindow(login);
+                this.Close(); 
+                mainWindow.Show();
             }
             else if (issledovs)
             {
-
+                ResearchProjectsWindow mainWindow = new ResearchProjectsWindow();
+                this.Close(); 
+                mainWindow.Show();
             }
             else if (explorers)
             {

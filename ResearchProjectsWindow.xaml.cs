@@ -17,33 +17,31 @@ using System.Windows.Shapes;
 namespace Geophisics
 {
     /// <summary>
-    /// Interaction logic for AdminProjectsWindow.xaml
+    /// Interaction logic for ResearchProjectsWindow.xaml
     /// </summary>
-    public partial class AdminProjectsWindow : Window
+    public partial class ResearchProjectsWindow : Window
     {
         Database db = Database.getInstance();
         public ObservableCollection<Проекты> Projects { get => db.Проектыs.Local.ToObservableCollection(); }
-        public AdminProjectsWindow()
+        public ResearchProjectsWindow()
         {
             InitializeComponent();
             PROJECTS.ItemsSource = Projects;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void PROJECTS_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            MessageBox.Show("jefhenj");
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AdminAddProjectWindow adminAddProjectWindow = new AdminAddProjectWindow();
-            if (adminAddProjectWindow.ShowDialog() != true) return;
-            db.Проектыs.Add(adminAddProjectWindow.Project);
-            db.SaveChanges();
-            PROJECTS.Items.Refresh();
-            MessageBox.Show("Проект добавлен!");
+            var Project = PROJECTS.SelectedItem as Проекты;
+            if (Project != null)
+            {
+                ResearchPlozhWindow win = new ResearchPlozhWindow(Project);
+                win.ShowDialog();
+            }
         }
     }
 }
