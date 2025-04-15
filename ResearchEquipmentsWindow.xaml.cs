@@ -38,7 +38,14 @@ namespace Geophisics
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            ResearchAddEquipmentWindow researchAddEquipmentWindow = new ResearchAddEquipmentWindow();
+            if (researchAddEquipmentWindow.ShowDialog() != true)
+            {
+                return;
+            }
+            db.Оборудованияs.Add(researchAddEquipmentWindow.Equipment);
+            db.SaveChanges();   
+            EQUIPMENTS.Items.Refresh();
         }
     }
 }

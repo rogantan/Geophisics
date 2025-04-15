@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="ResearchPiketsWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Пикеты" Grid.Row="0" FontSize="30"/>
+        <!--<Button Content="Добавить профиль" Grid.Row="1" Margin="325,0,325,0" />
+        <Button Content="Контур площади" Grid.Row="1" Margin="10,0,660,0"/>
+        <Button Content="Добавить координату" Grid.Row="1" Margin="165,0,500,0"/>
+        <Button Content="Пикеты" Margin="645,0,25,0" Grid.Row="1"/>
+        <Button Content="Точки профиля" Margin="495,0,175,0" Grid.Row="1"/>-->
+        <ListView Grid.Row="2" x:Name="PIKETS">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Дата}"/>
+                    <GridViewColumn Header="Оборудование" DisplayMemberBinding="{Binding IdОборудованияNavigation.Название}"/>
+                    <GridViewColumn Header="Исследовательы" DisplayMemberBinding="{Binding IdИсследователяNavigation.Логин}"/>
+                    <GridViewColumn Header="Х" DisplayMemberBinding="{Binding X}"/>
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding Y}"/>
+                    <GridViewColumn Header="Значение" DisplayMemberBinding="{Binding Значение}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

@@ -16,17 +16,17 @@ using System.Windows.Shapes;
 namespace Geophisics
 {
     /// <summary>
-    /// Interaction logic for ResearchPiketsWindow.xaml
+    /// Interaction logic for ResearchTochkiPlozhWindow.xaml
     /// </summary>
-    public partial class ResearchPiketsWindow : Window
+    public partial class ResearchTochkiPlozhWindow : Window
     {
         Database db = Database.getInstance();
-        public List<Измерения> pikets {  get; set; }
-        public ResearchPiketsWindow(Профили profil)
+        public List<КоординатыПлощади> tochki {  get; set; }
+        public ResearchTochkiPlozhWindow(Площади square)
         {
             InitializeComponent();
-            pikets = db.Измеренияs.Where(x => x.IdПрофиляNavigation.Id == profil.Id).ToList();
-            PIKETS.ItemsSource = pikets;
+            tochki = db.КоординатыПлощадиs.Where(x => x.IdПлощадиNavigation.Id == square.Id).ToList();
+            TOCHKI.ItemsSource = tochki;
         }
     }
 }

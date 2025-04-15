@@ -15,7 +15,7 @@
         <TextBlock Text="Оборудование" Grid.Row="0" FontSize="30"/>
         <Button Content="Добавить оборудование" Grid.Row="1" Margin="535,0,65,0" Click="Button_Click_1"/>
         <Button Content="Назад" Grid.Row="1" Margin="10,0,675,0" Click="Button_Click"/>
-        <DataGrid Grid.Row="2" x:Name="EQUIPMENTS" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="2" x:Name="EQUIPMENTS" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Название" Binding="{Binding Название}"/>

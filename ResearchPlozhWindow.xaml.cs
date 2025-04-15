@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -55,7 +56,30 @@ namespace Geophisics
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            var plozh = PLOZHES.SelectedItem as Площади;
+            if (plozh != null)
+            {
+                ResearchProfiliesWindow researchPiketsWindow = new ResearchProfiliesWindow(plozh);
+                researchPiketsWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите площадь");
+            }
+        }
 
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            var square = PLOZHES.SelectedItem as Площади;
+            if (square != null)
+            {
+                ResearchTochkiPlozhWindow researchTochkiPlozhWindow = new ResearchTochkiPlozhWindow(square);
+                researchTochkiPlozhWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите площадь");
+            }
         }
     }
 }

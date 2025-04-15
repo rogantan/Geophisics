@@ -13,10 +13,11 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="Площади" Grid.Row="0" FontSize="30"/>
-        <Button Content="Добавить площадь" Grid.Row="1" Margin="440,0,160,0" Click="Button_Click"/>
-        <Button Content="Контур площади" Grid.Row="1" Margin="10,0,590,0" Click="Button_Click_2"/>
-        <Button Content="Добавить координату" Grid.Row="1" Margin="225,0,375,0" Click="Button_Click_1"/>
-        <Button Content="Пикеты" Margin="660,0,10,0" Click="Button_Click_3" Grid.Row="1"/>
+        <Button Content="Добавить площадь" Grid.Row="1" Margin="320,0,345,0" Click="Button_Click"/>
+        <Button Content="Контур площади" Grid.Row="1" Margin="10,0,670,0" Click="Button_Click_2"/>
+        <Button Content="Добавить координату" Grid.Row="1" Margin="160,0,510,0" Click="Button_Click_1"/>
+        <Button Content="Профили" Margin="660,0,10,0" Click="Button_Click_3" Grid.Row="1"/>
+        <Button Content="Точки площади" Margin="490,0,180,0" Click="Button_Click_4" Grid.Row="1"/>
         <ListView Grid.Row="2" x:Name="PLOZHES">
             <ListView.View>
                 <GridView>
@@ -25,5 +26,6 @@
             </ListView.View>
         </ListView>
         
+
     </Grid>
 </Window>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Authorization" Height="450" Width="800">
     <Grid>
-        <Border CornerRadius="15" Background="#2596BE" Width="500" Margin="150,74,150,40">
+        <Border CornerRadius="15" Background="#2596BE"  Margin="120,60,120,30">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
@@ -19,10 +19,10 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Text="Авторизация" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" Foreground="White"/>
                 <TextBlock Grid.Row="1" Text="Логин" FontSize="30" VerticalAlignment="Center" Margin="20, 0" Foreground="White"/>
-                <TextBox Grid.Row="2" x:Name="Login"/>
+                <TextBox Grid.Row="2" x:Name="Login" FontSize="30"/>
                 <TextBlock Grid.Row="3" Text="Пароль" FontSize="30" VerticalAlignment="Center" Margin="20, 0" Foreground="White"/>
-                <TextBox Grid.Row="4" x:Name="Password"/>
-                <Button Grid.Row="5" Content="Войти" HorizontalAlignment="Center" Margin="0,25,0,-10" Width="100" Click="Button_Click"/>
+                <TextBox Grid.Row="4" x:Name="Password" FontSize="30"/>
+                <Button Grid.Row="5" Content="Войти" HorizontalAlignment="Center" Width="100" Margin="0,25,0,-10" Click="Button_Click"/>
             </Grid>
         </Border>
     </Grid>
