@@ -1,0 +1,26 @@
+﻿<Window x:Class="Geophisics.ResearchAddPiketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geophisics"
+        mc:Ignorable="d"
+        Title="ResearchAddPiketWindow" Height="300" Width="300">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Выберите дату измерения"/>
+            <DatePicker x:Name="date"/>
+            <TextBlock Text="Выберите оборудование"/>
+            <ComboBox x:Name="Eq" DisplayMemberPath="Название" SelectedItem="{Binding Piket.IdОборудованияNavigation}"></ComboBox>
+            <TextBlock Text="Выберите исследователя"/>
+            <ComboBox x:Name="Re" DisplayMemberPath="Логин" SelectedItem="{Binding Piket.IdИсследователяNavigation}"></ComboBox>
+            <TextBlock Text="Введите координату X"/>
+            <TextBox x:Name="x" Text="{Binding Piket.X}"/>
+            <TextBlock Text="Введите координату Y"/>
+            <TextBox x:Name="y" Text="{Binding Piket.Y}"/>
+            <TextBlock Text="Введите значение"/>
+            <TextBox x:Name="value" Text="{Binding Piket.Значение}"/>
+            <Button Content="Сохранить" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

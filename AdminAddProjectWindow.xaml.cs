@@ -35,12 +35,14 @@ namespace Geophisics
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (name == null || desc == null || begin_date == null || end_date == null || ad_combo.SelectedItem == null || cus_combo.SelectedItem == null)
+            if (name.Text == null || desc.Text == null || begin_date.SelectedDate == null || end_date.SelectedDate == null || ad_combo.SelectedItem == null || cus_combo.SelectedItem == null)
             {
                 MessageBox.Show("Неверные данные");
             }
             else
             {
+                Project.ДатаНачала = DateOnly.FromDateTime(begin_date.SelectedDate.Value);
+                Project.ДатаОкончания = DateOnly.FromDateTime(end_date.SelectedDate.Value);
                 DialogResult = true;
             }
                 

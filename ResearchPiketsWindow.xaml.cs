@@ -22,11 +22,29 @@ namespace Geophisics
     {
         Database db = Database.getInstance();
         public List<Измерения> pikets {  get; set; }
+        Профили Profil {  get; set; }
         public ResearchPiketsWindow(Профили profil)
         {
             InitializeComponent();
             pikets = db.Измеренияs.Where(x => x.IdПрофиляNavigation.Id == profil.Id).ToList();
             PIKETS.ItemsSource = pikets;
+            this.Profil = profil;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ResearchAddPiketWindow researchAddPiketWindow = new ResearchAddPiketWindow(Profil);
+            if (researchAddPiketWindow.ShowDialog() != true) return;
+            db.Измеренияs.Add(researchAddPiketWindow.Piket);
+            db.SaveChanges();
+            pikets = db.Измеренияs.Where(x => x.IdПрофиляNavigation.Id == Profil.Id).ToList();
+            PIKETS.ItemsSource = pikets;
+            MessageBox.Show("Пикет добавлен");
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

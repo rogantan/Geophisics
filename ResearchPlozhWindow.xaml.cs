@@ -46,7 +46,19 @@ namespace Geophisics
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            var square = PLOZHES.SelectedItem as Площади;
+            ResearchAddTochkaPlozh researchAddTochkaPlozh = new ResearchAddTochkaPlozh(square);
+            if (square != null)
+            {
+                if (researchAddTochkaPlozh.ShowDialog() != true) return;
+                db.КоординатыПлощадиs.Add(researchAddTochkaPlozh.Tochka);
+                db.SaveChanges();
+                MessageBox.Show("Координата площади добавлена!");
+            }
+            else
+            {
+                MessageBox.Show("Выберите площадь");
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

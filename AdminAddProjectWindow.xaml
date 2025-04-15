@@ -13,9 +13,9 @@
             <TextBlock Text="Введите описание"/>
             <TextBox x:Name="desc" Text="{Binding Project.Описание}"/>
             <TextBlock Text="Выберите дату начала проекта"/>
-            <DatePicker x:Name="begin_date" SelectedDate="{Binding Project.ДатаНачала}"/>
+            <DatePicker x:Name="begin_date"/>
             <TextBlock Text="Выберите дату окончания проекта"/>
-            <DatePicker x:Name="end_date" SelectedDate="{Binding Project.ДатаОкончания}"/>
+            <DatePicker x:Name="end_date"/>
             <TextBlock Text="Выберите админа"/>
             <ComboBox x:Name="ad_combo" SelectedItem="{Binding Project.IdАдминистратораNavigation}" DisplayMemberPath="Логин"></ComboBox>
             <TextBlock Text="Выберите заказчика"/>
