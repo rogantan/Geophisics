@@ -1,19 +1,5 @@
 ﻿using Geophisics.Models;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Security.Cryptography.Xml;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Geophisics
 {
@@ -96,6 +82,29 @@ namespace Geophisics
             {
                 ResearchTochkiPlozhWindow researchTochkiPlozhWindow = new ResearchTochkiPlozhWindow(square);
                 researchTochkiPlozhWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите площадь");
+            }
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            var square = PLOZHES.SelectedItem as Площади;
+            if ( square != null)
+            {
+                List<КоординатыПлощади> tochki = db.КоординатыПлощадиs.Where(x => x.IdПлощадиNavigation.Id == square.Id).ToList();
+                foreach (var tochka in tochki)
+                {
+                    db.КоординатыПлощадиs.Remove(tochka);
+                    db.SaveChanges();
+                }
+                db.Площадиs.Remove(square);
+                db.SaveChanges();
+                Plozhes = db.Площадиs.Where(x => x.IdПроектаNavigation.Id == Project.Id).ToList();
+                PLOZHES.ItemsSource = Plozhes;
+                MessageBox.Show("Площадь удалена!");
             }
             else
             {

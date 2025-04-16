@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Geophisics"
         mc:Ignorable="d"
-        Title="ResearchProfiliesWindow" Height="450" Width="800">
+        Title="ResearchProfiliesWindow" Height="450" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -13,11 +13,13 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="Профили" Grid.Row="0" FontSize="30"/>
-        <Button Content="Добавить профиль" Grid.Row="1" Margin="325,0,325,0" Click="Button_Click_1"/>
-        <Button Content="Контур площади" Grid.Row="1" Margin="10,0,660,0"/>
-        <Button Content="Добавить координату" Grid.Row="1" Margin="160,0,495,0" Click="Button_Click_3"/>
-        <Button Content="Пикеты" Margin="645,0,25,0" Grid.Row="1" Click="Button_Click"/>
-        <Button Content="Точки профиля" Margin="495,0,175,0" Grid.Row="1" Click="Button_Click_2"/>
+        <Button Content="Добавить профиль" Grid.Row="1" Margin="380,0,685,0" Click="Button_Click_1"/>
+        <Button Content="Контур профиля" Grid.Row="1" Margin="10,0,1055,0" Click="Button_Click_4"/>
+        <Button Content="Добавить координату" Grid.Row="1" Margin="165,0,845,0" Click="Button_Click_3"/>
+        <Button Content="Пикеты" Margin="720,0,365,0" Grid.Row="1" Click="Button_Click"/>
+        <Button Content="Точки профиля" Margin="545,0,515,0" Grid.Row="1" Click="Button_Click_2"/>
+        <Button Content="Редактировать профиль" Margin="870,0,175,0" Grid.Row="1" Click="Button_Click_5"/>
+        <Button Content="Удалить профиль" Margin="1050,0,30,0" Grid.Row="1" Click="Button_Click_6"/>
         <ListView Grid.Row="2" x:Name="PROFILI">
             <ListView.View>
                 <GridView>
@@ -28,5 +30,6 @@
             </ListView.View>
         </ListView>
         
+
     </Grid>
 </Window>

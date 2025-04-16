@@ -31,7 +31,7 @@ namespace Geophisics
 
         private void PROJECTS_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("jefhenj");
+            //MessageBox.Show("jefhenj");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

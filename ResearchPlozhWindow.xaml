@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Geophisics"
         mc:Ignorable="d"
-        Title="ResearchPlozhWindow" Height="450" Width="800">
+        Title="ResearchPlozhWindow" Height="450" Width="900">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -13,11 +13,12 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="Площади" Grid.Row="0" FontSize="30"/>
-        <Button Content="Добавить площадь" Grid.Row="1" Margin="320,0,345,0" Click="Button_Click"/>
-        <Button Content="Контур площади" Grid.Row="1" Margin="10,0,670,0" Click="Button_Click_2"/>
-        <Button Content="Добавить координату" Grid.Row="1" Margin="160,0,510,0" Click="Button_Click_1"/>
-        <Button Content="Профили" Margin="660,0,10,0" Click="Button_Click_3" Grid.Row="1"/>
-        <Button Content="Точки площади" Margin="490,0,180,0" Click="Button_Click_4" Grid.Row="1"/>
+        <Button Content="Добавить площадь" Grid.Row="1" Margin="315,0,450,0" Click="Button_Click"/>
+        <Button Content="Контур площади" Grid.Row="1" Margin="10,0,775,0" Click="Button_Click_2"/>
+        <Button Content="Добавить координату" Grid.Row="1" Margin="150,0,610,0" Click="Button_Click_1"/>
+        <Button Content="Профили" Margin="635,0,155,0" Click="Button_Click_3" Grid.Row="1"/>
+        <Button Content="Точки площади" Margin="475,0,285,0" Click="Button_Click_4" Grid.Row="1"/>
+        <Button Content="Удалить площадь" Margin="765,0,10,0" Click="Button_Click_5" Grid.Row="1"/>
         <ListView Grid.Row="2" x:Name="PLOZHES">
             <ListView.View>
                 <GridView>
@@ -26,6 +27,7 @@
             </ListView.View>
         </ListView>
         
+
 
     </Grid>
 </Window>

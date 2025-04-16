@@ -86,5 +86,47 @@ namespace Geophisics
                 MessageBox.Show("Выберите профиль");
             }
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            var profil = PROFILI.SelectedItem as Профили;
+            if ( profil != null )
+            {
+                ResearchProfilGraphics researchProfilGraphics = new ResearchProfilGraphics(profil);
+                researchProfilGraphics.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите профиль");
+            }
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            var profil = PROFILI.SelectedItem as Профили;
+            if (profil != null)
+            {
+                List<КоординатыПрофиля> tochki = db.КоординатыПрофиляs.Where(x => x.IdПрофиляNavigation.Id == profil.Id).ToList();
+                foreach (var tochka in tochki)
+                {
+                    db.КоординатыПрофиляs.Remove(tochka);
+                    db.SaveChanges();
+                }
+                db.Профилиs.Remove(profil);
+                db.SaveChanges();
+                Squers = db.Профилиs.Where(x => x.IdПлощадиNavigation.Id == Plozh.Id).ToList();
+                PROFILI.ItemsSource = Squers;
+                MessageBox.Show("Профиль удален!");
+            }
+            else
+            {
+                MessageBox.Show("Выберите профиль");
+            }
+        }
     }
 }
