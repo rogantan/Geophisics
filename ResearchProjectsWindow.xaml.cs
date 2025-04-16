@@ -53,7 +53,10 @@ namespace Geophisics
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Application.Current.Shutdown();
+            //Application.Current.
+            //Authorization authorization = new Authorization();
+            //authorization.Show();
+            //Application.Current.Windows.OfType<ResearchProjectsWindow>().FirstOrDefault()?.Close();
         }
     }
 }

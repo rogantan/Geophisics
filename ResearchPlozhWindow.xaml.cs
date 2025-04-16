@@ -63,7 +63,16 @@ namespace Geophisics
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            var plozh = PLOZHES.SelectedItem as Площади;
+            if (plozh != null)
+            {
+                ResearchPlozhGraphicsWindow researchPlozhGraphicsWindow = new ResearchPlozhGraphicsWindow(plozh);
+                researchPlozhGraphicsWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите площадь");
+            }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
