@@ -9,10 +9,13 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="Точки профиля" Grid.Row="0" FontSize="30"/>
-        <ListView Grid.Row="1" x:Name="TOCHKI">
+        <Button Content="Удалить точку" Margin="620,0,30,0" Grid.Row="1" Click="Button_Click_1"/>
+        <Button Content="Редактировать точку" Grid.Row="1" Margin="440,0,215,0" Click="Button_Click"/>
+        <ListView Grid.Row="2" x:Name="TOCHKI">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>

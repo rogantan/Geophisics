@@ -1,4 +1,5 @@
 ﻿using Geophisics.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,40 @@ namespace Geophisics
             InitializeComponent();
             Tochki = db.КоординатыПрофиляs.Where(x => x.IdПрофиляNavigation.Id == profil.Id).ToList();
             TOCHKI.ItemsSource = Tochki;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var tochka = TOCHKI.SelectedItem as КоординатыПрофиля;
+            if (tochka != null )
+            {
+                ResearchAddTochkaProfil researchAddTochkaProfil = new ResearchAddTochkaProfil(tochka.IdПрофиляNavigation) { Tochka = tochka };
+                if (researchAddTochkaProfil.ShowDialog() == true )
+                {
+                    db.Entry(researchAddTochkaProfil.Tochka).State = EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Точка изменена");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите точку");
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var tochka = TOCHKI.SelectedItem as КоординатыПрофиля;
+            if (tochka != null)
+            {
+                db.КоординатыПрофиляs.Remove(tochka);
+                db.SaveChanges();
+                MessageBox.Show("Точка удалена");
+            }
+            else
+            {
+                MessageBox.Show("Выберите точку");
+            }
         }
     }
 }
