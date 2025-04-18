@@ -1,0 +1,28 @@
+﻿<Window x:Class="Geophisics.GeoProfiliesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geophisics"
+        mc:Ignorable="d"
+        Title="GeoProfiliesWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Профили" Grid.Row="0" FontSize="30"/>
+        <Button Content="Контур профиля" Grid.Row="1" Margin="10,0,680,0" Click="Button_Click"/>
+        <Button Content="Пикеты" Margin="665,0,50,0" Grid.Row="1" Click="Button_Click_1"/>
+        <ListView Grid.Row="2" x:Name="PROFILI">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Направление" DisplayMemberBinding="{Binding Направление}"/>
+                    <GridViewColumn Header="Длина" DisplayMemberBinding="{Binding Длина}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

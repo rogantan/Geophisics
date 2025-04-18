@@ -1,0 +1,26 @@
+﻿<Window x:Class="Geophisics.GeoPlozhesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geophisics"
+        mc:Ignorable="d"
+        Title="GeoPlozhesWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Площади" Grid.Row="0" FontSize="30"/>
+        <Button Content="Контур площади" Grid.Row="1" Margin="10,0,675,0" Click="Button_Click"/>
+        <Button Content="Профили" Margin="625,0,70,0" Click="Button_Click_1" Grid.Row="1"/>
+        <ListView Grid.Row="2" x:Name="PLOZHES">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Площадь" DisplayMemberBinding="{Binding Id}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

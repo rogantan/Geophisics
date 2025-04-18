@@ -54,7 +54,9 @@ namespace Geophisics
             }
             else if (explorers)
             {
-
+                GeoMainWindow mainWindow = new GeoMainWindow(login); 
+                this.Close(); 
+                mainWindow.Show();
             }
             else
             {

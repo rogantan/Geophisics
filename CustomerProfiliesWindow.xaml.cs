@@ -1,5 +1,4 @@
-﻿using Geophisics.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,20 +15,21 @@ using System.Windows.Shapes;
 namespace Geophisics
 {
     /// <summary>
-    /// Interaction logic for CustomerProjectsWindow.xaml
+    /// Interaction logic for CustomerProfiliesWindow.xaml
     /// </summary>
-    public partial class CustomerProjectsWindow : Window
+    public partial class CustomerProfiliesWindow : Window
     {
-        Database db = Database.getInstance();
-        //public List<Проекты> Projects { get => db.Проектыs.Local.ToList(); }
-        public CustomerProjectsWindow(string Login)
+        public CustomerProfiliesWindow()
         {
             InitializeComponent();
-            List<Проекты> Projects = db.Проектыs.Where(x => x.IdЗаказчикаNavigation.Логин == Login).ToList();
-            PROJECTS.ItemsSource = Projects;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
         }

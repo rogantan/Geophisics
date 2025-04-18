@@ -16,17 +16,15 @@ using System.Windows.Shapes;
 namespace Geophisics
 {
     /// <summary>
-    /// Interaction logic for CustomerProjectsWindow.xaml
+    /// Interaction logic for CustomerPiketsWindow.xaml
     /// </summary>
-    public partial class CustomerProjectsWindow : Window
+    public partial class CustomerPiketsWindow : Window
     {
         Database db = Database.getInstance();
-        //public List<Проекты> Projects { get => db.Проектыs.Local.ToList(); }
-        public CustomerProjectsWindow(string Login)
+        public CustomerPiketsWindow(Профили profil)
         {
             InitializeComponent();
-            List<Проекты> Projects = db.Проектыs.Where(x => x.IdЗаказчикаNavigation.Логин == Login).ToList();
-            PROJECTS.ItemsSource = Projects;
+            PIKETS.ItemsSource = db.Измеренияs.Where(x => x.IdПрофиляNavigation.Id == profil.Id).ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

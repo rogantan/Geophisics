@@ -1,0 +1,18 @@
+﻿<Window x:Class="Geophisics.GeoAddAnomaliaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geophisics"
+        mc:Ignorable="d"
+        Title="GeoAddAnomaliaWindow" Height="300" Width="300">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Введите название аномалии"/>
+            <TextBox x:Name="naz" Text="{Binding Anomalia.Название}"/>
+            <TextBlock Text="Введите описание аномалии"/>
+            <TextBox x:Name="opis" Text="{Binding Anomalia.Описание}"/>
+            <Button Content="Сохранить" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

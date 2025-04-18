@@ -1,0 +1,20 @@
+﻿<Window x:Class="Geophisics.GeoMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geophisics"
+        mc:Ignorable="d"
+        Title="GeoMainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Геофизик" Grid.Row="0" FontSize="30"/>
+        <Button Grid.Row="1" Width="150" Height="100" Margin="220,143,430,0" Content="Проекты" BorderBrush="Transparent" Grid.RowSpan="2" Click="Button_Click"/>
+        <Button Grid.Row="1" Width="150" Height="100" Margin="410,142,240,0" Content="Аномалии" BorderBrush="Transparent" Grid.RowSpan="2" Click="Button_Click_1"/>
+    </Grid>
+</Window>

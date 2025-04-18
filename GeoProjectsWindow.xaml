@@ -1,11 +1,11 @@
-﻿<Window x:Class="Geophisics.CustomerProjectsWindow"
+﻿<Window x:Class="Geophisics.GeoProjectsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Geophisics"
         mc:Ignorable="d"
-        Title="CustomerProjectsWindow" Height="450" Width="800">
+        Title="GeoProjectsWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Проекты" Grid.Row="0" FontSize="30"/>
         <Button Content="Площади" Grid.Row="1" Margin="535,0,65,0" Click="Button_Click"/>
+        <Button Content="Назад" Grid.Row="1" Margin="25,0,665,0" Click="Button_Click_1"/>
         <ListView Grid.Row="2" x:Name="PROJECTS">
             <ListView.View>
                 <GridView>
