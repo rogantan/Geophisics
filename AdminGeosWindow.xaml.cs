@@ -1,4 +1,5 @@
 ﻿using Geophisics.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -44,6 +45,46 @@ namespace Geophisics
             db.SaveChanges();
             GEOS.Items.Refresh();
             MessageBox.Show("Геофизик добавлен!");
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var geo = GEOS.SelectedItem as Геофизики;
+            if (geo != null)
+            {
+                AdminAddGeoWindow adminAddGeoWindow = new AdminAddGeoWindow() { Geo = geo };
+                if (adminAddGeoWindow.ShowDialog() == true)
+                {
+                    db.Entry(adminAddGeoWindow.Geo).State = EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Геофизик изменен");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите геофизика");
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var geo = GEOS.SelectedItem as Геофизики;
+            if (geo != null)
+            {
+                List<Аномалии> anomalies = db.Аномалииs.Where(x => x.IdГеофизикаNavigation.Id == geo.Id).ToList();
+                foreach (var anomali in anomalies)
+                {
+                    db.Remove(anomali);
+                    db.SaveChanges();
+                }
+                db.Геофизикиs.Remove(geo);
+                db.SaveChanges();
+                MessageBox.Show("Геофизик удален");
+            }
+            else
+            {
+                MessageBox.Show("Выберите геофизика");
+            }
         }
     }
 }

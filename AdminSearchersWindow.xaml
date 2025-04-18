@@ -13,8 +13,10 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="Исследователи" Grid.Row="0" FontSize="30"/>
-        <Button Content="Добавить исследователя" Grid.Row="1" Margin="535,0,65,0" Click="Button_Click_1"/>
+        <Button Content="Добавить исследователя" Grid.Row="1" Margin="195,0,430,0" Click="Button_Click_1"/>
         <Button Content="Назад" Grid.Row="1" Margin="10,0,675,0" Click="Button_Click"/>
+        <Button Content="Редактировать исследователя" Margin="400,0,215,0" Click="Button_Click_2" Grid.Row="1"/>
+        <Button Content="Удалить исследователя" Margin="611,0,25,0" Click="Button_Click_3" Grid.Row="1"/>
         <DataGrid Grid.Row="2" x:Name="SEARCHERS" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>

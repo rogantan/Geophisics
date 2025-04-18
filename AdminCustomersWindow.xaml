@@ -13,8 +13,10 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="Заказчики" Grid.Row="0" FontSize="30"/>
-        <Button Content="Добавить заказчика" Grid.Row="1" Margin="550,0,45,0" Click="Button_Click_1"/>
+        <Button Content="Добавить заказчика" Grid.Row="1" Margin="220,0,416,0" Click="Button_Click_1"/>
         <Button Content="Назад" Grid.Row="1" Margin="10,0,675,0" Click="Button_Click"/>
+        <Button Content="Редактировать заказчика" Margin="416,0,220,0" Click="Button_Click_2" Grid.Row="1"/>
+        <Button Content="Удалить заказчика" Margin="605,0,31,0" Click="Button_Click_3" Grid.Row="1"/>
         <DataGrid Grid.Row="2" AutoGenerateColumns="False" x:Name="CUSTOMERS" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
@@ -24,5 +26,6 @@
                 <DataGridTextColumn Header="Пароль" Binding="{Binding Пароль}" />
             </DataGrid.Columns>
         </DataGrid>
+        
     </Grid>
 </Window>

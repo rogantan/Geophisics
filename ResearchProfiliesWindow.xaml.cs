@@ -1,4 +1,5 @@
 ﻿using Geophisics.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,7 +104,21 @@ namespace Geophisics
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-
+            var profil = PROFILI.SelectedItem as Профили;
+            if ( profil != null )
+            {
+                ResearchAddProfilWindow researchAddProfilWindow = new ResearchAddProfilWindow(profil.IdПлощадиNavigation) { Profil = profil };
+                if (researchAddProfilWindow.ShowDialog() == true)
+                {
+                    db.Entry(researchAddProfilWindow.Profil).State = EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Профиль изменен");
+                } 
+            }
+            else
+            {
+                MessageBox.Show("Выберите профиль");
+            }
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using Geophisics.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -44,6 +45,46 @@ namespace Geophisics
             db.SaveChanges();
             SEARCHERS.Items.Refresh();
             MessageBox.Show("Исследователь добавлен!");
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var resercher = SEARCHERS.SelectedItem as Исследователи;
+            if (resercher != null)
+            {
+                AdminAddSearcherWindow adminAddSearcherWindow = new AdminAddSearcherWindow() { Sear = resercher };
+                if (adminAddSearcherWindow.ShowDialog() == true)
+                {
+                    db.Entry(adminAddSearcherWindow.Sear).State = EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Исследователь изменен");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите исследователя");
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var resercher = SEARCHERS.SelectedItem as Исследователи;
+            if (resercher != null)
+            {
+                List<Измерения> pikets = db.Измеренияs.Where(x => x.IdИсследователяNavigation.Id == resercher.Id).ToList();
+                foreach (var piket in pikets)
+                {
+                    db.Remove(piket);
+                    db.SaveChanges();
+                }
+                db.Исследователиs.Remove(resercher);
+                db.SaveChanges();
+                MessageBox.Show("Исследователь удален");
+            }
+            else
+            {
+                MessageBox.Show("Выберите исследователя");
+            }
         }
     }
 }
