@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="GeoPiketsWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Пикеты" Grid.Row="0" FontSize="30"/>
+        <Button Content="График" Grid.Row="1" Margin="70,0,600,0" Click="Button_Click"/>
+        <ListView Grid.Row="2" x:Name="PIKETS">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding Дата}"/>
+                    <GridViewColumn Header="Оборудование" DisplayMemberBinding="{Binding IdОборудованияNavigation.Название}"/>
+                    <GridViewColumn Header="Исследовательы" DisplayMemberBinding="{Binding IdИсследователяNavigation.Логин}"/>
+                    <GridViewColumn Header="Х" DisplayMemberBinding="{Binding X}"/>
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding Y}"/>
+                    <GridViewColumn Header="Значение" DisplayMemberBinding="{Binding Значение}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

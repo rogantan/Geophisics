@@ -11,7 +11,7 @@
             <TextBlock Text="Введите название"/>
             <TextBox Text="{Binding Equipment.Название}"/>
             <TextBlock Text="Выберите дату последней калибровки" />
-            <DatePicker SelectedDate="{Binding Equipment.ДатаКалибровки}"/>
+            <DatePicker x:Name="date"/>
             <Button Content="Сохранить" Click="Button_Click"/>
         </StackPanel>
     </Grid>

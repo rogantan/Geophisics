@@ -29,7 +29,8 @@ namespace Geophisics
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ItogGraphicsWindow g = new ItogGraphicsWindow();
+            g.ShowDialog();
         }
     }
 }

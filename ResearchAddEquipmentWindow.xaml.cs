@@ -29,8 +29,9 @@ namespace Geophisics
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(Equipment.Название) && Equipment.ДатаКалибровки != null)
+            if (!string.IsNullOrEmpty(Equipment.Название) && date.SelectedDate != null)
             {
+                Equipment.ДатаКалибровки = DateOnly.FromDateTime(date.SelectedDate.Value);
                 DialogResult = true;
             }
             else

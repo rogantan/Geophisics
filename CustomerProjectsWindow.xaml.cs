@@ -31,7 +31,17 @@ namespace Geophisics
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            var project = PROJECTS.SelectedItem as Проекты;
+            if (project != null)
+            {
+                CustomerPlozhWindow customerPlozhWindow = new CustomerPlozhWindow(project);
+                customerPlozhWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите проект");
+            }
+                
         }
     }
 }

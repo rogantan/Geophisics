@@ -20,9 +20,17 @@ namespace Geophisics
     /// </summary>
     public partial class GeoPiketsWindow : Window
     {
+        Database db = Database.getInstance();
         public GeoPiketsWindow(Профили profil)
         {
             InitializeComponent();
+            PIKETS.ItemsSource = db.Измеренияs.Where(x => x.IdПрофиляNavigation.Id == profil.Id).ToList();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ItogGraphicsWindow g = new ItogGraphicsWindow();
+            g.ShowDialog();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Geophisics.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,19 +20,39 @@ namespace Geophisics
     /// </summary>
     public partial class CustomerPlozhWindow : Window
     {
-        public CustomerPlozhWindow()
+        Database db = Database.getInstance();
+        public CustomerPlozhWindow(Проекты project)
         {
             InitializeComponent();
+            PLOZHES.ItemsSource = db.Площадиs.Where(x => x.IdПроектаNavigation.Id == project.Id).ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            var plozh = PLOZHES.SelectedItem as Площади;
+            if (plozh != null)
+            {
+                ResearchPlozhGraphicsWindow researchPlozhGraphicsWindow = new ResearchPlozhGraphicsWindow(plozh);
+                researchPlozhGraphicsWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите площадь");
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            var plozh = PLOZHES.SelectedItem as Площади;
+            if (plozh != null)
+            {
+                CustomerProfiliesWindow customerProfiliesWindow = new CustomerProfiliesWindow(plozh);
+                customerProfiliesWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Выберите площадь");
+            }
         }
     }
 }

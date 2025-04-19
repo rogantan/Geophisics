@@ -1,4 +1,5 @@
 ﻿using Geophisics.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -46,6 +47,41 @@ namespace Geophisics
             db.Оборудованияs.Add(researchAddEquipmentWindow.Equipment);
             db.SaveChanges();   
             EQUIPMENTS.Items.Refresh();
+            MessageBox.Show("Оборудование добавлено");
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var equipment = EQUIPMENTS.SelectedItem as Оборудования;
+            if (equipment != null)
+            {
+                ResearchAddEquipmentWindow researchAddEquipmentWindow = new ResearchAddEquipmentWindow() { Equipment = equipment };
+                if (researchAddEquipmentWindow.ShowDialog() == true)
+                {
+                    db.Entry(researchAddEquipmentWindow.Equipment).State = EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Оборудование изменено");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите оборудование");
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var equipment = EQUIPMENTS.SelectedItem as Оборудования;
+            if (equipment != null)
+            {
+                db.Оборудованияs.Remove(equipment);
+                db.SaveChanges();
+                MessageBox.Show("Оборудование удалено");
+            }
+            else
+            {
+                MessageBox.Show("Выберите оборудование");
+            }
         }
     }
 }
