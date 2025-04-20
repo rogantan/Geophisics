@@ -74,6 +74,8 @@ namespace Geophisics
             var equipment = EQUIPMENTS.SelectedItem as Оборудования;
             if (equipment != null)
             {
+                List<Измерения> pikets = db.Измеренияs.Where(x => x.IdОборудованияNavigation.Id == equipment.Id).ToList();
+                db.RemoveRange(pikets); 
                 db.Оборудованияs.Remove(equipment);
                 db.SaveChanges();
                 MessageBox.Show("Оборудование удалено");
