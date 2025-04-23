@@ -22,7 +22,7 @@ namespace Geophisics
     {
         Database db = Database.getInstance();
         public List<Измерения> pikets {  get; set; }
-        Профили Profil {  get; set; }
+        public Профили Profil {  get; set; }
         public ResearchPiketsWindow(Профили profil)
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace Geophisics
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ItogGraphicsWindow g = new ItogGraphicsWindow();    
+            ItogGraphicsWindow g = new ItogGraphicsWindow(Profil);    
             g.ShowDialog();
         }
     }

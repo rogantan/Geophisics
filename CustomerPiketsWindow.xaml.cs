@@ -21,15 +21,17 @@ namespace Geophisics
     public partial class CustomerPiketsWindow : Window
     {
         Database db = Database.getInstance();
+        public Профили Profil {  get; set; }
         public CustomerPiketsWindow(Профили profil)
         {
             InitializeComponent();
+            this.Profil = profil;
             PIKETS.ItemsSource = db.Измеренияs.Where(x => x.IdПрофиляNavigation.Id == profil.Id).ToList();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ItogGraphicsWindow g = new ItogGraphicsWindow();
+            ItogGraphicsWindow g = new ItogGraphicsWindow(Profil);
             g.ShowDialog();
         }
     }
